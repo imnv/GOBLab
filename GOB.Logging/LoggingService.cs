@@ -22,6 +22,7 @@ namespace GOB.Logging
 
         public LoggingService()
         {
+            var testVar = "GOB";
         }
 
         public static void Log(string source, EventLogEntryType logEntryType, string message, string categoryName = "")
@@ -58,22 +59,22 @@ namespace GOB.Logging
 
         public static void LogError(string errorMessage, bool logStackTrace = true, string categoryName = "")
         {
-            Log(errorMessage, EventLogEntryType.Error, logStackTrace, categoryName);
+            Log($"Error: {errorMessage}", EventLogEntryType.Error, logStackTrace, categoryName);
         }
 
         public static void LogInformation(string sourceMessage, bool logStackTrace = false, string categoryName = "")
         {
-            Log(sourceMessage, EventLogEntryType.Information, logStackTrace, categoryName);
+            Log($"Information: {sourceMessage}", EventLogEntryType.Information, logStackTrace, categoryName);
         }
 
         public static void LogWarning(string sourceMessage, bool logStackTrace = false, string categoryName = "")
         {
-            Log(sourceMessage, EventLogEntryType.Warning, logStackTrace, categoryName);
+            Log($"Warning: {sourceMessage}", EventLogEntryType.Warning, logStackTrace, categoryName);
         }
 
         public static void Log(string sourceMessage, EventLogEntryType logEntryType, IGobLoggable logObject, string categoryName = "")
         {
-            Log(sourceMessage, logEntryType, logObject.GetLogMessage(), categoryName);
+            Log($"Log: {sourceMessage}", logEntryType, logObject.GetLogMessage(), categoryName);
         }
     }
 }
