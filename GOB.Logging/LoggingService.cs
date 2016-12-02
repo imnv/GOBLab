@@ -18,6 +18,7 @@ namespace GOB.Logging
 
         public LoggingService()
         {
+            var testVar = "GOB";
         }
 
         public static void Log(string source, EventLogEntryType logEntryType, string message, string categoryName = "")
