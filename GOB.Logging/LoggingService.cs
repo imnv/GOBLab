@@ -14,6 +14,10 @@ namespace GOB.Logging
             public static string Custom = "Custom";
         }
 
+        public string HelloWorld()
+        {
+            return "Hello World!";
+        }
         public static string LogName => "GOB2";
 
         public LoggingService()
